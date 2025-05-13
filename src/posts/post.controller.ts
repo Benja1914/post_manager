@@ -7,7 +7,7 @@ import { ApiTags } from '@nestjs/swagger';
 @ApiTags('Post')
 @Controller('post')
 export class PostController {
-    constructor(private readonly postService: PostService) {}
+    constructor(private readonly postService: PostService) { }
 
     @Post('create')
     async createPost(@Body() createPostRequestDto: CreatePostRequestDto) {
@@ -22,8 +22,8 @@ export class PostController {
     @Delete(':id')
     async deletePost(@Param('id') id: number) {
         try {
-            const result = await this.postService.deletePost(id);
-            return new BaseResponse(result, 'Post eliminado correctamente.', true);
+            await this.postService.deletePost(id);
+            return new BaseResponse([], 'Post eliminado correctamente.', true);
         } catch (err) {
             throw err;
         }
