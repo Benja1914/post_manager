@@ -1,27 +1,63 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Post Manager
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+**Post Manager** es una API REST construida con [NestJS](https://nestjs.com/) usando TypeScript y TypeORM para la gestión de posts.  
+La aplicación estandariza las respuestas HTTP y está completamente documentada con Swagger.
 
-# NestJS Starter Kit
+## Características
 
-Welcome to the **NestJS Starter Kit**! This project is a boilerplate designed to help you kickstart your NestJS applications with a robust and scalable structure.
+- **NestJS** + **TypeScript**: Framework robusto y tipado para Node.js.
+- **TypeORM**: ORM para la gestión de la base de datos PostgreSQL.
+- **Respuestas HTTP estandarizadas**: Todas las respuestas siguen un formato consistente.
+- **Swagger**: Documentación interactiva de la API.
+- **CRUD de Posts**: Crear, eliminar y listar posts.
+- **pnpm**: Gestor de paquetes rápido y eficiente.
 
-## Features
+## Uso de pnpm
 
-- **NestJS Framework**: Built with the latest version of NestJS for creating efficient and scalable server-side applications.
-- **TypeORM Integration**: Pre-configured with TypeORM for seamless database interactions.
-- **Swagger Documentation**: Automatically generate API documentation using Swagger.
-- **ESLint & Prettier**: Enforced code quality and formatting standards.
-- **Jest Testing**: Pre-configured testing environment with Jest.
-- **Environment Configuration**: Manage environment variables easily with `@nestjs/config`.
-- **Hot Reloading**: Development mode with live reload for faster iterations.
+Este proyecto utiliza [pnpm](https://pnpm.io/) como gestor de paquetes.  
+**Ventajas de pnpm:**
+- Instalaciones más rápidas y eficientes.
+- Ahorro de espacio en disco gracias a enlaces simbólicos.
+- Mejor manejo de dependencias y monorepositorios.
 
-## Prerequisites
+Para instalar dependencias:
+```bash
+pnpm install
+```
 
-Before you begin, ensure you have the following installed:
+## Documentación Swagger
 
-- [Node.js](https://nodejs.org/) (v20 or higher)
-- [pnpm](https://pnpm.io/) (preferred package manager)
+Accede a la documentación interactiva en:  
+[http://localhost:8080/docs](http://localhost:8080/docs)
+
+## Repositorio
+
+GitHub: [https://github.com/Benja1914/post_manager](https://github.com/Benja1914/post_manager)
+
+## Endpoints principales (Posts)
+
+### Crear un post
+
+```bash
+curl --request POST \
+  --url http://localhost:8080/api/post/create \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "name": "Mi primer post",
+    "description": "Este es el contenido del post."
+  }'
+```
+
+### Eliminar un post por id
+
+```bash
+curl --request DELETE \
+  --url http://localhost:8080/api/post/1
+```
+
+### Obtener lista de posts
+
+```bash
+curl --request GET \
+  --url http://localhost:8080/api/post
+```
