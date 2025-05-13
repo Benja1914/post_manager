@@ -1,14 +1,13 @@
 export class BaseResponse<T> {
-    data: T
+  data: T;
 
-    message: string
+  message: string;
 
-    success: boolean
+  success: boolean;
 
-    constructor(data: T, message: string, success: boolean) {
-        this.data = data
-        this.message = message
-        this.success = success
-    }
-
+  constructor(data: T, message: string, success: boolean) {
+    this.data = data;
+    this.message = message;
+    this.success = success;
+  }
 }

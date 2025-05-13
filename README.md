@@ -11,6 +11,8 @@ La aplicación estandariza las respuestas HTTP y está completamente documentada
 - **Swagger**: Documentación interactiva de la API.
 - **CRUD de Posts**: Crear, eliminar y listar posts.
 - **pnpm**: Gestor de paquetes rápido y eficiente.
+- **.env**: Archivo para variables de entorno y configuración sensible.
+- **Linter (ESLint)**: Código más limpio y consistente.
 
 ## Uso de pnpm
 
@@ -24,6 +26,19 @@ Para instalar dependencias:
 ```bash
 pnpm install
 ```
+
+## Variables de entorno
+
+El archivo `.env` contiene las variables de entorno necesarias para la configuración de la base de datos y otros parámetros sensibles.  
+**No olvides configurarlo antes de iniciar el proyecto.**
+
+## Linter
+
+Se utiliza **ESLint** para mantener un código limpio y consistente.  
+**Beneficios:**
+- Detecta errores y malas prácticas automáticamente.
+- Facilita el mantenimiento y la colaboración en el código.
+- Permite aplicar formato automático con `pnpm run lint:fix`.
 
 ## Levantar el proyecto
 

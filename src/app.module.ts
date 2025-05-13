@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PostModule } from './posts/post.module';
 import { ScheduleModule } from '@nestjs/schedule';
@@ -8,7 +8,7 @@ import { PassportModule } from '@nestjs/passport';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true
+      isGlobal: true,
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -19,11 +19,11 @@ import { PassportModule } from '@nestjs/passport';
       database: process.env.DB_NAME,
       autoLoadEntities: true,
       synchronize: true,
-      logging: false
+      logging: false,
     }),
     PassportModule,
     ScheduleModule.forRoot(),
     PostModule,
   ],
 })
-export class AppModule { }
+export class AppModule {}
