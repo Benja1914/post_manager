@@ -25,6 +25,13 @@ Para instalar dependencias:
 pnpm install
 ```
 
+## Levantar el proyecto
+
+Para iniciar el servidor de desarrollo ejecuta:
+```bash
+pnpm run dev
+```
+
 ## Documentación Swagger
 
 Accede a la documentación interactiva en:  
